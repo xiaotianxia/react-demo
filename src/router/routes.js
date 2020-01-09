@@ -10,9 +10,9 @@ export default [
     },
 
     {
-        path: '/list',
-        name: 'list',
+        path: '/recommend',
+        name: 'recommend',
         id: uuid(),
-        component: loadable(() => import('../pages/list/List')),
+        component: loadable(() => import('../pages/recommend/Recommend')),
     }
 ]

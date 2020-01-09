@@ -1,6 +1,7 @@
 import React from 'react';
+import './item.scss';
 
-export default class Home extends React.Component {
+export default class Item extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -8,7 +9,9 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <div>home</div>
+            <li className="item">
+                -
+            </li>
         )
     }
 }

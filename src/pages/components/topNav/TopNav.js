@@ -4,6 +4,7 @@ import './topNav.scss';
 export default class TopNav extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {};
     }
 
     render() {
