@@ -13,7 +13,7 @@ export default class Item extends React.Component {
         } = this.props;
         return (
             <li className="item">
-                <Card>
+                <Card bordered={false}>
                     <Card.Meta
                         avatar={
                             <Avatar src={avatar_url} />

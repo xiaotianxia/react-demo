@@ -12,7 +12,11 @@
 
         .item {
             width: 50%;
-            margin: 20px;
+
+            .ant-card {
+                outline: 1px solid #e8e8e8;
+                outline-offset: -8px;
+            }
 
             .description {
                 margin-bottom: 8px;
