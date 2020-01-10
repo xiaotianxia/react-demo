@@ -1,0 +1,22 @@
+.repos,
+.following,
+.followers {
+    margin: 0 auto;
+
+    &-list,
+    &-list,
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+
+        .item {
+            width: 40%;
+            margin: 20px;
+
+            .description {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}

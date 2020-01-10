@@ -1,11 +1,32 @@
-import {RECOMMEND} from './config';
+import { renderTpl } from '../utils/util';
+
+const HOST = 'https://api.github.com';
+
+function request(url, param) {
+    return new Promise((resolve, reject) => {
+        const fullUrl = renderTpl(HOST + url, param);
+        fetch(fullUrl).then(r => r.text().then(res => {
+            resolve(res);
+        })).catch(err => {
+            reject(err);
+        });
+    });
+}
+
 
 const apis = {
-    async getRecommend(param) {
-        const url = RECOMMEND;
-        return fetch(url).then(r => r.text().then(res => {
-            return res;
-        }))
-    }
+    getRepos(param) {
+        return request('/users/{{username}}/repos', param)
+    },
+
+    getFollowing(param) {
+        return request('/users/{{username}}/following', param)
+    },
+
+    getFollowers(param) {
+        return request('/users/{{username}}/followers', param)
+    },
+
+
 }
 export default apis;
