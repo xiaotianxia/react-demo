@@ -4,7 +4,7 @@ import Item from './components/Item';
 import api from '../../request/api';
 import '../../style/pages/common.scss';
 
-export default class Recommend extends React.Component {
+export default class List extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

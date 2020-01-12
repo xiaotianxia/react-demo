@@ -5,7 +5,7 @@ import { Empty } from 'antd';
 import api from '../../request/api';
 import '../../style/pages/common.scss';
 
-export default class Recommend extends React.Component {
+export default class List extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,9 +19,8 @@ export default class Recommend extends React.Component {
 
     async getList() {
         const data = await api.getFollowing({ username: 'xiaotianxia' });
-        const newList = JSON.parse(data) || [];
         this.setState({
-            list: this.state.list.concat(newList)
+            list: this.state.list.concat(data)
         });
     }
 
@@ -29,7 +28,7 @@ export default class Recommend extends React.Component {
         const { list } = this.state;
         let result = null;
         if (list.length) {
-            result = <ul className="repos-list">
+            result = <ul className="following-list">
                 {list.map(item => (
                     <Item key={item.id} {...item}></Item>
                 ))}

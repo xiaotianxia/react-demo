@@ -19,7 +19,7 @@ export default class Item extends React.Component {
         return (
             <li className="item">
                 <Card title={name}>
-                    <p className="description"><a href={html_url} target="_blank">{description}</a></p>
+                    <p className="description"><a href={html_url} target="_blank" rel="noopener noreferrer">{description}</a></p>
                     <Tag color="#2db7f5"><Icon type="code" /> {language}</Tag>
                     <Tag color="#87d068"><Icon type="eye" /> {watchers_count}</Tag>
                     <Tag color="#108ee9"><Icon type="star" /> {stargazers_count}</Tag>

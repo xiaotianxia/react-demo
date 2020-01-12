@@ -20,7 +20,7 @@ export default class Item extends React.Component {
                         }
                         title={login}
                     />
-                    <p className="description"><a href={html_url} target="_blank">visit</a></p>
+                    <p className="description"><a href={html_url} target="_blank" rel="noopener noreferrer">visit</a></p>
                 </Card>
             </li>
         )

@@ -5,7 +5,7 @@ import { Empty } from 'antd';
 import api from '../../request/api';
 import '../../style/pages/common.scss';
 
-export default class Recommend extends React.Component {
+export default class List extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,7 +29,7 @@ export default class Recommend extends React.Component {
         const { list } = this.state;
         let result = null;
         if (list.length) {
-            result = <ul className="repos-list">
+            result = <ul className="followers-list">
                 {list.map(item => (
                     <Item key={item.id} {...item}></Item>
                 ))}

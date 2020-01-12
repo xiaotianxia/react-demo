@@ -18,6 +18,25 @@
                 outline-offset: -8px;
             }
 
+            .ant-card-meta {
+                cursor: pointer;
+            }
+
+            .description {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .repos-list {
+        .item {
+            margin: 10px;
+            width: 46%;
+
+            .ant-card {
+                outline: none;
+            }
+
             .description {
                 margin-bottom: 8px;
             }
