@@ -17,26 +17,28 @@ export default class InfoCard extends React.Component {
                 </a>
                 <span className="info-card-bio">{userInfo.bio || 'He/She says notinng.'}</span>
                 <div className="info-card-tags">
-                    <Tag title={userInfo.followers} color="#2db7f5"><Icon type="user" /> {userInfo.followers || 0}</Tag>
-                    <Tag title={userInfo.following} color="#2db7f5"><Icon type="user-add" /> {userInfo.following || 0}</Tag>
+                    <Tag title="followers" color="#2db7f5"><Icon type="user" />&nbsp;{userInfo.followers || 0}</Tag>
+                    <Tag title="following" color="#2db7f5"><Icon type="user-add" />&nbsp;{userInfo.following || 0}</Tag>
                 </div>
                 {
                     userInfo.blog &&
-                    <p><Icon type="dribbble" /> {userInfo.blog}</p>
-
+                    <>
+                        <Icon type="dribbble" /> &nbsp;
+                        <a href={userInfo.html_url} target="_blank" rel="noopener noreferrer">{userInfo.blog}</a>
+                    </>
                 }
                 {
                     userInfo.email &&
-                    <p><Icon type="global" /> {userInfo.email}</p>
+                    <p><Icon type="global" />&nbsp;{userInfo.email}</p>
 
                 }
                 {
                     userInfo.location &&
-                    <p><Icon type="environment" theme="filled" /> {userInfo.location}</p>
+                    <p><Icon type="environment" theme="filled" />&nbsp;{userInfo.location}</p>
                 }
                 {
                     userInfo.company && 
-                    <p><Icon type="bank" /> {userInfo.company}</p>
+                    <p><Icon type="bank" />&nbsp;{userInfo.company}</p>
                 }
             </div>
         )

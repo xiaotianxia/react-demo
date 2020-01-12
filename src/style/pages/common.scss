@@ -2,10 +2,9 @@
 .following,
 .followers {
     margin: 0 auto;
+    padding: 30px 30px 100px;
 
-    &-list,
-    &-list,
-    &-list {
+    .list {
         display: flex;
         flex-wrap: wrap;
         justify-content: stretch;
@@ -27,9 +26,14 @@
             }
         }
     }
+    
+    .list-page {
+        float: right;
+    }
 
     .repos-list {
         .item {
+            display: inline-block;
             margin: 10px;
             width: 46%;
 

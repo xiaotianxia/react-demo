@@ -1,11 +1,15 @@
-import { renderTpl } from '../utils/util';
+import { parseTpl, serializeJson } from '../utils/util';
 
 const HOST = 'https://api.github.com';
 
-function request(url, param) {
+function request(path, param) {
     return new Promise((resolve, reject) => {
-        const fullUrl = renderTpl(HOST + url, param);
-        fetch(fullUrl + '?access_token=b5b06dd6c09f58cfa7dd25b0a09f3808c405467b').then(r => r.text().then(res => {
+        let fullUrl = parseTpl(HOST + path, param);
+        fullUrl = fullUrl + '?' + serializeJson({
+            ...param,
+            access_token: 'e9228c949375c65213044a74ffdba2e011af9414'
+        })
+        fetch(fullUrl).then(r => r.text().then(res => {
             resolve(JSON.parse(res));
         })).catch(err => {
             reject(err);
