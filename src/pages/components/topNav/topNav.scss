@@ -1,9 +1,11 @@
 .topnav {
-    z-index: 32;
+    position: fixed;
+    width: 100%;
     padding: 10px;
     font-size: 14px;
     color: hsla(0,0%,100%,.7);
     background-color: #24292e;
+    z-index: 9999;
 
     .topnav-logo {
         display: inline-block;

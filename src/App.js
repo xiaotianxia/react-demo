@@ -6,7 +6,9 @@ export default function App() {
     return (
         <>
             <TopNav></TopNav>
-            <Router></Router>
+            <div className="main">
+                <Router></Router>
+            </div>
         </>
     );
 }

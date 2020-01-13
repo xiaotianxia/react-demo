@@ -19,7 +19,9 @@ export default class List extends React.Component {
     }
 
     async getList() {
-        const data = await api.getRepos({ username: ls.get('my_github_app_username')});
+        const data = await api.getRepos({
+            username: ls.get('my_github_app_username')
+        });
         this.setState({
             list: this.state.list.concat(data)
         });

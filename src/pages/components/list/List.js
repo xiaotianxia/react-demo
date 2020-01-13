@@ -7,6 +7,7 @@ import {
     Icon
 } from 'antd';
 import '../../../style/pages/common.scss';
+import { ls } from '../../../utils/localStorage';
 
 export default class List extends React.Component {
     state = {
@@ -19,7 +20,6 @@ export default class List extends React.Component {
     };
 
     componentDidMount = () => {
-        console.log(this.props)
         this.getList();
     }
 
@@ -31,13 +31,12 @@ export default class List extends React.Component {
         const listMethod = this.props.listMethod;
         const data = await listMethod({
             ...this.state.pageParam,
-            username: 'xiaotianxia',
+            username: ls.get('my_github_app_username'),
         });
         this.setState({
             loading: false,
             list: data
         });
-        console.log(this.state.pageParam.page)
     }
 
     onPageChange(type) {
@@ -57,7 +56,6 @@ export default class List extends React.Component {
             });
         }
         this.getList();
-        console.log(this.state.pageParam.page)
     }
 
     render() {
@@ -78,9 +76,9 @@ export default class List extends React.Component {
                 }
                 <div className="list-page">
                     <Button.Group>
-                        <Button onClick={this.onPageChange.bind(this, 'pre')} disabled={this.state.pageParam.page <= 0}><Icon type="left" />上一页</Button>
-                        <span style={{fontSize: '12px'}}>&nbsp;{this.state.pageParam.page}&nbsp;</span>
-                        <Button onClick={this.onPageChange.bind(this, 'next')} disabled={!list.length}>下一页<Icon type="right" /></Button>
+                        <Button onClick={this.onPageChange.bind(this, 'pre')} disabled={this.state.pageParam.page <= 0}><Icon type="arrow-left" /></Button>
+                        <span style={{fontSize: '10px'}}>&nbsp;{this.state.pageParam.page}&nbsp;</span>
+                        <Button onClick={this.onPageChange.bind(this, 'next')} disabled={!list.length}><Icon type="arrow-right" /></Button>
                     </Button.Group>
                 </div>
             </div>;
