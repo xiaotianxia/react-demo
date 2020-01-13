@@ -79,7 +79,7 @@ export default class List extends React.Component {
                 <div className="list-page">
                     <Button.Group>
                         <Button onClick={this.onPageChange.bind(this, 'pre')} disabled={this.state.pageParam.page <= 0}><Icon type="left" />上一页</Button>
-                        <span>&nbsp;第{this.state.pageParam.page}页&nbsp;</span>
+                        <span style={{fontSize: '12px'}}>&nbsp;{this.state.pageParam.page}&nbsp;</span>
                         <Button onClick={this.onPageChange.bind(this, 'next')} disabled={!list.length}>下一页<Icon type="right" /></Button>
                     </Button.Group>
                 </div>

@@ -1,5 +1,8 @@
 import React from 'react';
+import links from './components/links';
 import './topNav.scss';
+
+console.log(links);
 
 export default class TopNav extends React.Component {
     render() {
@@ -11,9 +14,11 @@ export default class TopNav extends React.Component {
                     </a>
                 </div>
                 <div className="topnav-links">
-                    <a href="/#/repos">repos</a>
-                    <a href="/#/following">following</a>
-                    <a href="/#/followers">followers</a>
+                    {
+                        links.map(link => (
+                            <a href={link.path} key={link.path}>{link.title}</a>
+                        ))
+                    }
                 </div>
             </div>
         )

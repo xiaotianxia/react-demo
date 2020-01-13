@@ -30,9 +30,11 @@ export default class List extends React.Component {
         let result = null;
         if (list.length) {
             result = <ul className="repos-list">
-                {list.map(item => (
-                    <Item key={item.id} {...item}></Item>
-                ))}
+                {
+                    list.map(item => (
+                        <Item key={item.id} {...item}></Item>
+                    ))
+                }
             </ul>;
         } else {
             result = <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />;

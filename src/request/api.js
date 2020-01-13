@@ -7,7 +7,8 @@ function request(path, param) {
         let fullUrl = parseTpl(HOST + path, param);
         fullUrl = fullUrl + '?' + serializeJson({
             ...param,
-            access_token: 'e9228c949375c65213044a74ffdba2e011af9414'
+            client_id: 'aa18248a5e12eca15a6f',
+            client_secret: '389eac9e777a6ced5127b45193640580174c426d'
         })
         fetch(fullUrl).then(r => r.text().then(res => {
             resolve(JSON.parse(res));
