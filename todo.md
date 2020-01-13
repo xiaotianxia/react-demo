@@ -1,4 +1,3 @@
 - redux
 - info card 浮卡
 - 登录
-- 关注、取消

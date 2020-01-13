@@ -20,18 +20,22 @@ function request(path, param) {
 
 export default {
     getRepos(param) {
-        return request('/users/{{username}}/repos', param)
+        return request('/users/{{username}}/repos', param);
     },
 
     getFollowing(param) {
-        return request('/users/{{username}}/following', param)
+        return request('/users/{{username}}/following', param);
     },
 
     getFollowers(param) {
-        return request('/users/{{username}}/followers', param)
+        return request('/users/{{username}}/followers', param);
     },
 
     getInfo(param) {
-        return request('/users/{{username}}', param)
+        return request('/users/{{username}}', param);
+    },
+
+    getRepoDetail(param) {
+        return request('/repos/{{username}}/{{repo}}', param);
     }
 };

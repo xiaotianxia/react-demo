@@ -19,7 +19,6 @@ export default class List extends React.Component {
 
     async getList() {
         const data = await api.getRepos({username: 'xiaotianxia'});
-        console.log(data)
         this.setState({
             list: this.state.list.concat(data)
         });
