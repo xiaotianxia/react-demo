@@ -4,6 +4,7 @@ import Item from './components/Item';
 import { Empty } from 'antd';
 import api from '../../request/api';
 import '../../style/pages/common.scss';
+import { ls } from '../../utils/localStorage';
 
 export default class List extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ export default class List extends React.Component {
     }
 
     async getList() {
-        const data = await api.getRepos({username: 'xiaotianxia'});
+        const data = await api.getRepos({ username: ls.get('my_github_app_username')});
         this.setState({
             list: this.state.list.concat(data)
         });
@@ -28,7 +29,7 @@ export default class List extends React.Component {
         const { list } = this.state;
         let result = null;
         if (list.length) {
-            result = <ul className="repos-list">
+            result = <ul className="list repos-list">
                 {
                     list.map(item => (
                         <Item key={item.id} {...item}></Item>

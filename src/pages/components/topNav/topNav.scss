@@ -22,12 +22,15 @@
     .topnav-links {
         display: inline-block;
         margin-left: 20px;
-        vertical-align: middle;
         height: 100%;
 
         a {
             display: inline-block;
             margin: 0 10px;
         }
+    }
+
+    .topnav-user {
+        float: right;
     }
 }

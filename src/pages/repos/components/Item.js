@@ -7,6 +7,7 @@ import {
 } from 'antd';
 import DetailCard from './detailCard/DetailCard';
 import api from '../../../request/api';
+import { cutStr } from '../../../utils/util';
 
 export default class Item extends React.Component {
     constructor(props) {
@@ -43,14 +44,14 @@ export default class Item extends React.Component {
             <li className="item">
                 <Card title={name}>
                     <Popover content={this.state.popoverContent} title={name} mouseEnterDelay={.5} onVisibleChange={this.onMouseOver.bind(this, owner.login, name)}>
-                        <p className="description">
-                            <a href={html_url} target="_blank" rel="noopener noreferrer">{description}</a>
+                        <p className="description" title={description}>
+                            <a href={html_url} target="_blank" rel="noopener noreferrer">{cutStr(description)}</a>
                         </p>
+                        <Tag color="#2db7f5"><Icon type="code" /> {language}</Tag>
+                        <Tag color="#87d068"><Icon type="eye" /> {watchers_count}</Tag>
+                        <Tag color="#108ee9"><Icon type="star" /> {stargazers_count}</Tag>
+                        <Tag color="#f50"><Icon type="fork" /> {forks_count}</Tag>
                     </Popover>
-                    <Tag color="#2db7f5"><Icon type="code" /> {language}</Tag>
-                    <Tag color="#87d068"><Icon type="eye" /> {watchers_count}</Tag>
-                    <Tag color="#108ee9"><Icon type="star" /> {stargazers_count}</Tag>
-                    <Tag color="#f50"><Icon type="fork" /> {forks_count}</Tag>
                 </Card>
             </li>
         )

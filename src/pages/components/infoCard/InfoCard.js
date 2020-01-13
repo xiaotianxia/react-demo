@@ -15,7 +15,7 @@ export default class InfoCard extends React.Component {
                 <a href={userInfo.html_url} target="_blank" rel="noopener noreferrer">
                     <Avatar src={userInfo.avatar_url} />
                 </a>
-                <span className="info-card-bio">{userInfo.bio || 'He/She says notinng.'}</span>
+                <span className="info-card-bio">{userInfo.bio || 'He/She says nothing.'}</span>
                 <div className="info-card-tags">
                     <Tag title="followers" color="#2db7f5"><Icon type="user" />&nbsp;{userInfo.followers || 0}</Tag>
                     <Tag title="following" color="#2db7f5"><Icon type="user-add" />&nbsp;{userInfo.following || 0}</Tag>

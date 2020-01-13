@@ -3,10 +3,10 @@ import uuid from 'uuid';
 
 export default [
     {   
-        path: '/home',
-        name: 'home',
+        path: '/login',
+        name: 'login',
         id: uuid(),
-        component: loadable(() => import('../pages/home/Home')),
+        component: loadable(() => import('../pages/login/Login')),
     },
 
     {

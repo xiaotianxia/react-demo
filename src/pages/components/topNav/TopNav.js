@@ -1,8 +1,15 @@
 import React from 'react';
 import links from './components/links';
 import './topNav.scss';
+import { Button, Icon } from 'antd';
+import { ls } from '../../../utils/localStorage';
 
 export default class TopNav extends React.Component {
+    onLogout = () => {
+        ls.remove('my_github_app_username');
+        window.location.reload();
+    }
+
     render() {
         return (
             <div className="topnav">
@@ -17,6 +24,10 @@ export default class TopNav extends React.Component {
                             <a href={link.path} key={link.path}>{link.title}</a>
                         ))
                     }
+                </div>
+                <div className="topnav-user">
+                    <Icon type="user" /> 
+                    <Button type="link" onClick={this.onLogout}>退出</Button>
                 </div>
             </div>
         )

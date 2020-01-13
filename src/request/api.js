@@ -19,6 +19,10 @@ function request(path, param) {
 }
 
 export default {
+    getUser(param) {
+        return request('/users/{{username}}', param);
+    },
+
     getRepos(param) {
         return request('/users/{{username}}/repos', param);
     },

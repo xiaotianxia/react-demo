@@ -6,6 +6,7 @@ import {
 } from 'antd';
 import { format } from 'timeago.js';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { cutStr} from '../../../../utils/util';
 import './detailCard.scss';
 
 export default class InfoCard extends React.Component {
@@ -17,12 +18,12 @@ export default class InfoCard extends React.Component {
         const detailInfo = this.props.detailInfo;
         return (
             <div className="detail-card">
-                <div className="info-card-bio">{detailInfo.description || 'He/She says notinng.'}</div>
+                <div className="info-card-bio" title={detailInfo.description}>{cutStr(detailInfo.description) || 'It says nothing.'}</div>
                 {
                     detailInfo.homepage &&
                     <div>
                         <Icon type="link" /> &nbsp;
-                        <a href={detailInfo.homepage} target="_blank" rel="noopener noreferrer">{detailInfo.homepage}</a>
+                        <a href={detailInfo.homepage} target="_blank" rel="noopener noreferrer">{cutStr(detailInfo.homepage, 30)}</a>
                     </div>
                 }
                 {
@@ -31,13 +32,13 @@ export default class InfoCard extends React.Component {
                         <CopyToClipboard text={detailInfo.clone_url}
                             onCopy={() => this.onCopied()}>
                             <div>
-                                <a href="void:0">{detailInfo.clone_url}</a>&nbsp;
+                                <a href="void:0">{cutStr(detailInfo.clone_url, 30)}</a>&nbsp;
                                 <Icon type="copy" /> 
                             </div>
                         </CopyToClipboard>
                     </div>
                 }
-                <div className="info-card-tags">
+                <div className="detail-card-tags">
                     <Tag color="#2db7f5"><Icon type="code" /> {detailInfo.language}</Tag>
                     <Tag color="#87d068"><Icon type="eye" /> {detailInfo.watchers_count}</Tag>
                     <Tag color="#108ee9"><Icon type="star" /> {detailInfo.stargazers_count}</Tag>

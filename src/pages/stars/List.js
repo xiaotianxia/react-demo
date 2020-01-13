@@ -28,8 +28,8 @@ export default class List extends React.Component {
     render() {
         const { list } = this.state;
         return (
-            <div className="repos">
-                <ul className="repos-list">
+            <div className="stars">
+                <ul className="list stars-list">
                     {list.map(item => (<Item key={item.id} {...item}></Item>))}
                 </ul>
             </div>

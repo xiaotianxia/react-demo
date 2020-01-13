@@ -5,6 +5,6 @@ import routes from './routes';
 export default () => (
     <HashRouter>
         {routes.map(router => (<Route key={router.id} path={router.path} component={router.component}></Route>))}
-        <Redirect from="/" to="repos" />
+        <Redirect from="/" to="login" />
     </HashRouter>
 )
