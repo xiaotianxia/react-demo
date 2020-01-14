@@ -6,9 +6,9 @@ import {
     Button,
 } from 'antd';
 import './login.scss';
-import api from '../../request/api';
+import api from '@api';
 import { withRouter, Redirect } from 'react-router-dom';
-import { ls } from '../../utils/localStorage';
+import { ls } from '@utils/localStorage';
 
 class RegistrationForm extends React.Component {
     state = {

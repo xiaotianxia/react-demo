@@ -2,7 +2,7 @@ import React from 'react';
 import links from './components/links';
 import './topNav.scss';
 import { Button, Icon } from 'antd';
-import { ls } from '../../../utils/localStorage';
+import { ls } from '@utils/localStorage';
 
 export default class TopNav extends React.Component {
     onLogout = () => {

@@ -5,8 +5,8 @@ import {
     Popover,
     Icon
 } from 'antd';
-import InfoCard from '../../infoCard/InfoCard';
-import api from '../../../../request/api';
+import InfoCard from '@components/infoCard/InfoCard';
+import api from '@api';
 
 export default class Item extends React.Component {
     constructor(props) {

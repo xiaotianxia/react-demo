@@ -1,0 +1,1 @@
+{"version":3,"sources":["login.scss"],"names":[],"mappings":"AAAA,mBAGQ,gBAAiB,CACjB,SAAU,CACV,qBAAsB,CACtB,YAAa,CACb,sCAA2C","file":"10.f59a0515.chunk.css","sourcesContent":[".login {\n\n    .login-form {\n        margin: 20px auto;\n        width: 40%;\n        border: 1px solid #ddd;\n        padding: 20px;\n        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);\n    }\n}"]}

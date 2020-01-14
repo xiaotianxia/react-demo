@@ -1,8 +1,8 @@
 
 import React from 'react';
 import Item from './components/Item';
-import api from '../../request/api';
-import '../../style/pages/common.scss';
+import api from '@api';
+import '@style/pages/common.scss';
 
 export default class List extends React.Component {
     constructor(props) {

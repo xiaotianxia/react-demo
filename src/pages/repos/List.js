@@ -2,9 +2,9 @@
 import React from 'react';
 import Item from './components/Item';
 import { Empty } from 'antd';
-import api from '../../request/api';
-import '../../style/pages/common.scss';
-import { ls } from '../../utils/localStorage';
+import api from '@api';
+import '@style/pages/common.scss';
+import { ls } from '@utils/localStorage';
 
 export default class List extends React.Component {
     constructor(props) {

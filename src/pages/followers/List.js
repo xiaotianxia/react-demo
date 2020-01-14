@@ -1,7 +1,7 @@
 
 import React from 'react';
-import List from '../components/list/List';
-import api from '../../request/api';
+import List from '@components/list/List';
+import api from '@api';
 
 export default class extends React.Component {
     render() {

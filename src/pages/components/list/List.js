@@ -6,8 +6,8 @@ import {
     Button,
     Icon
 } from 'antd';
-import '../../../style/pages/common.scss';
-import { ls } from '../../../utils/localStorage';
+import '@style/pages/common.scss';
+import { ls } from '@utils/localStorage';
 
 export default class List extends React.Component {
     state = {

@@ -6,8 +6,8 @@ import {
     Popover,
 } from 'antd';
 import DetailCard from './detailCard/DetailCard';
-import api from '../../../request/api';
-import { cutStr } from '../../../utils/util';
+import api from '@api';
+import { cutStr } from '@utils/util';
 
 export default class Item extends React.Component {
     constructor(props) {

@@ -6,7 +6,7 @@ import {
 } from 'antd';
 import { format } from 'timeago.js';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { cutStr} from '../../../../utils/util';
+import { cutStr} from '@utils/util';
 import './detailCard.scss';
 
 export default class InfoCard extends React.Component {

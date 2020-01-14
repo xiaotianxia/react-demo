@@ -1,4 +1,4 @@
-import { parseTpl, serializeJson } from '../utils/util';
+import { parseTpl, serializeJson } from '@/utils/util';
 
 const HOST = 'https://api.github.com';
 
