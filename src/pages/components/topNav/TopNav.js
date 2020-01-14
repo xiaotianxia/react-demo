@@ -1,7 +1,11 @@
 import React from 'react';
-import links from './components/links';
+import links from './config/links';
 import './topNav.scss';
-import { Button, Icon } from 'antd';
+import { 
+    Button,
+    Icon ,
+    Popover
+} from 'antd';
 import { ls } from '@utils/localStorage';
 
 export default class TopNav extends React.Component {
@@ -26,8 +30,15 @@ export default class TopNav extends React.Component {
                     }
                 </div>
                 <div className="topnav-user">
-                    <Icon type="user" /> 
-                    <Button type="link" onClick={this.onLogout}>退出</Button>
+                    <Popover placement="bottom" 
+                        trigger="hover"
+                        content={<Button type="link" 
+                        onClick={this.onLogout}>退出</Button>}>
+                        <div>
+                            <Icon type="user" /> 
+                            {'dddddd'}
+                        </div>
+                    </Popover>
                 </div>
             </div>
         )

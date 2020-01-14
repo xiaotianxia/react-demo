@@ -28,5 +28,12 @@ export default [
         name: 'followers',
         id: uuid(),
         component: loadable(() => import('@/pages/followers/List')),
+    },
+
+    {
+        path: '/events',
+        name: 'events',
+        id: uuid(),
+        component: loadable(() => import('@/pages/events/List')),
     }
 ]

@@ -33,6 +33,14 @@
     }
 
     .topnav-user {
-        float: right;
+        position: absolute;
+        right: 70px;
+        top: 18px;
+
+        .anticon-user {
+            font-size: 20px;
+            margin-right: 4px;
+            vertical-align: -3px;
+        }
     }
 }

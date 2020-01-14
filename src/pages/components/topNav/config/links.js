@@ -10,5 +10,9 @@ export default [
     {
         title: 'followers',
         path: '#/followers'
+    },
+    {
+        title: 'events',
+        path: '#/events'
     }
 ]

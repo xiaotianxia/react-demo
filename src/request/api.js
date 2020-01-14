@@ -41,5 +41,9 @@ export default {
 
     getRepoDetail(param) {
         return request('/repos/{{username}}/{{repo}}', param);
+    },
+
+    getEvents(param) {
+        return request('/users/{{username}}/events', param);
     }
 };
