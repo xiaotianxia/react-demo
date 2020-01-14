@@ -1,6 +1,8 @@
 export const ls = {
     get(key) {
-        if (key) return JSON.parse(localStorage.getItem(key));
+        if (key) {
+            return JSON.parse(localStorage.getItem(key)) || '';
+        }
         return '';
     },
 

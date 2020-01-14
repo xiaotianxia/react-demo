@@ -1,5 +1,7 @@
 import { parseTpl, serializeJson } from '@/utils/util';
-
+import {
+    message
+} from 'antd';
 const HOST = 'https://api.github.com';
 
 function request(path, param) {
@@ -11,7 +13,13 @@ function request(path, param) {
             client_secret: '389eac9e777a6ced5127b45193640580174c426d'
         })
         fetch(fullUrl).then(r => r.text().then(res => {
-            resolve(JSON.parse(res));
+            res = JSON.parse(res);
+            console.log(res);
+            if (res.message === 'Not Found') {
+                message.error('not found');
+            } else {
+                resolve(res);
+            }
         })).catch(err => {
             reject(err);
         });

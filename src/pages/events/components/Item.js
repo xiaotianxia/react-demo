@@ -10,7 +10,6 @@ import './item.scss'
 export default class Item extends React.Component {
     render() {
         const itemInfo = this.props.itemInfo;
-        const index = this.props.index;
         const {
             type,
             actor,

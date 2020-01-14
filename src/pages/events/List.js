@@ -32,7 +32,7 @@ export default class List extends React.Component {
         return (
             <div className="events">
                 <h2 style={{ margin: 20, fontSize: 20 }}>
-                    What happend to &nbsp;
+                    What happened to &nbsp;
                     <a href={`https://github.com/${username}`} target="_blank" rel="noopener noreferrer">{username}</a>
                     &nbsp; rencently ?
                 </h2>
