@@ -94,6 +94,13 @@ export default class Item extends React.Component {
                         <a href={`https://github.com/${repo.name}`} target="_blank" rel="noopener noreferrer">{repo.name}</a>
                     </span>
                 }
+                {
+                    type === 'ReleaseEvent' &&
+                    <span>
+                        published &nbsp;
+                        <a href={payload.release.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
+                    </span>
+                }
 
                 <span className="time">{format(itemInfo.created_at)}</span>
             </Timeline.Item>
