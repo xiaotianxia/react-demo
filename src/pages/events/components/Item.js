@@ -19,21 +19,21 @@ export default class Item extends React.Component {
                     type === 'PushEvent' &&
                     <span>
                         {actor.display_login} created {payload.commits.length} commits in repository &nbsp;
-                        <a href={repo.url} target="_blank">{repo.name}</a>
+                        <a href={repo.url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
                     </span>
                 }
                 {
                     type === 'WatchEvent' &&
                     <span>
                         {actor.display_login} starred repository &nbsp;
-                        <a href={repo.url} target="_blank">{repo.name}</a>
+                        <a href={repo.url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
                     </span>
                 }
                 {
                     type === 'CreateEvent' &&
                     <span>
                         {actor.display_login} created a repository &nbsp;
-                        <a href={repo.url} target="_blank">{repo.name}</a>
+                        <a href={repo.url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
                     </span>
                 }
 
