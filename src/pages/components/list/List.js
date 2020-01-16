@@ -61,10 +61,10 @@ export default class List extends React.Component {
     render() {
         const { list } = this.state;
         const result =
-            <div>
+            <>
                 {
                     list.length > 0 &&
-                    <ul className="list following-list">
+                    <ul className="list">
                         {list.map(item => (
                             <Item key={item.id} {...item}></Item>
                         ))}
@@ -74,21 +74,21 @@ export default class List extends React.Component {
                     list.length === 0 &&
                     <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
                 }
-                <div className="list-page">
-                    <Button.Group>
-                        <Button onClick={this.onPageChange.bind(this, 'pre')} disabled={this.state.pageParam.page <= 0}><Icon type="arrow-left" /></Button>
-                        <span style={{fontSize: '10px'}}>&nbsp;{this.state.pageParam.page}&nbsp;</span>
-                        <Button onClick={this.onPageChange.bind(this, 'next')} disabled={!list.length}><Icon type="arrow-right" /></Button>
-                    </Button.Group>
-                </div>
-            </div>;
+            </>;
 
         return (
-            <div className="repos">
+            <>
                 {
                     this.state.loading ? <Icon type="loading" /> : result
                 }
-            </div>
+                <div className="list-page">
+                    <Button.Group>
+                        <Button onClick={this.onPageChange.bind(this, 'pre')} disabled={this.state.pageParam.page <= 0}><Icon type="arrow-left" /></Button>
+                        <span style={{ fontSize: '10px' }}>&nbsp;{this.state.pageParam.page}&nbsp;</span>
+                        <Button onClick={this.onPageChange.bind(this, 'next')} disabled={!list.length}><Icon type="arrow-right" /></Button>
+                    </Button.Group>
+                </div>
+            </>
         )
     }
 }

@@ -31,7 +31,6 @@ class LoginForm extends React.Component {
         this.setState({ loading: false });
         if (data.id) {
             this.props.dispatch(onLogin({ username: data.login }));
-            this.props.history.goBack() || this.props.history.push('repos');
         }
     }
 
