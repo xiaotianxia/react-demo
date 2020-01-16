@@ -26,7 +26,6 @@ export default class List extends React.Component {
     async getList() {
         this.setState({
             loading: true,
-            list: []
         });
         const listMethod = this.props.listMethod;
         const data = await listMethod({
@@ -84,7 +83,6 @@ export default class List extends React.Component {
                 <div className="list-page">
                     <Button.Group>
                         <Button onClick={this.onPageChange.bind(this, 'pre')} disabled={this.state.pageParam.page <= 0}><Icon type="arrow-left" /></Button>
-                        <span style={{ fontSize: '10px' }}>&nbsp;{this.state.pageParam.page}&nbsp;</span>
                         <Button onClick={this.onPageChange.bind(this, 'next')} disabled={!list.length}><Icon type="arrow-right" /></Button>
                     </Button.Group>
                 </div>

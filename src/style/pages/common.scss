@@ -3,12 +3,12 @@
 .followers {
     margin: 0 auto;
     padding: 30px 30px 100px;
-    min-height: 300px;
-
+    
     .list {
         display: flex;
         flex-wrap: wrap;
         justify-content: stretch;
+        min-height: 300px;
 
         .item {
             width: 50%;

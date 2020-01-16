@@ -24,14 +24,13 @@ export default class List extends React.Component {
     async getList() {
         this.setState({
             loading: true,
-            list: []
         });
         const data = await api.getRepos({
             username: ls.get('my_github_app_username')
         });
         this.setState({
             loading: false,
-            list: this.state.list.concat(data)
+            list: data
         });
     }
 
