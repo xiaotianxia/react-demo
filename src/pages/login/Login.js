@@ -4,7 +4,6 @@ import {
     Icon,
     Input,
     Button,
-    message
 } from 'antd';
 import './login.scss';
 import api from '@api';
@@ -17,7 +16,6 @@ class RegistrationForm extends React.Component {
     }
 
     handleSubmit = e => {
-        console.log(this.props);
         e.preventDefault();
         ls.remove('my_github_app_username');
         this.props.form.validateFields((err, values) => {
@@ -34,9 +32,7 @@ class RegistrationForm extends React.Component {
         if (data.id) {
             ls.set('my_github_app_username', username);
             // this.props.history.push('repos');
-            this.props.history.goBack()
-        } else {
-            message.error('user not exist.');
+            this.props.history.goBack();
         }
     }
 
@@ -63,6 +59,7 @@ class RegistrationForm extends React.Component {
                         <Button type="primary" loading={this.state.loading} htmlType="submit">Log in</Button>
                     </Form.Item>
                 </Form>
+                <div className="login-mask"></div>
             </div>
         }
     }

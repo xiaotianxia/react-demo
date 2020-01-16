@@ -14,12 +14,10 @@ function request(path, param) {
         })
         fetch(fullUrl).then(r => r.text().then(res => {
             res = JSON.parse(res);
-            console.log(res);
-            if (res.message === 'Not Found') {
-                message.error('not found');
-            } else {
-                resolve(res);
+            if (res.message) {
+                message.error(res.message || '接口出错');
             }
+            resolve(res);
         })).catch(err => {
             reject(err);
         });
