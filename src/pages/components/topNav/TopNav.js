@@ -38,7 +38,7 @@ class TopNav extends React.Component {
                             }>
                         <div>
                             <Icon type="user" /> 
-                            {this.props.logined ? this.props.userInfo.username : '登录'}
+                            <span className="topnav-user__name">{this.props.logined ? this.props.userInfo.username : '登录'}</span>
                         </div>
                     </Popover>
                 </div>
