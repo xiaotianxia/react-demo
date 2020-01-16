@@ -31,8 +31,7 @@ class RegistrationForm extends React.Component {
         this.setState({ loading: false });
         if (data.id) {
             ls.set('my_github_app_username', username);
-            // this.props.history.push('repos');
-            this.props.history.goBack();
+            this.props.history.goBack() || this.props.history.push('repos');
         }
     }
 
