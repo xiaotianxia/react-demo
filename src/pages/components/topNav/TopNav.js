@@ -6,12 +6,12 @@ import {
     Icon ,
     Popover
 } from 'antd';
-import { ls } from '@utils/localStorage';
+import { connect } from 'react-redux';
+import { onLogout } from '@/redux/actions';
 
-export default class TopNav extends React.Component {
+class TopNav extends React.Component {
     onLogout = () => {
-        ls.remove('my_github_app_username');
-        window.location.reload();
+        this.props.dispatch(onLogout());
     }
 
     render() {
@@ -32,11 +32,13 @@ export default class TopNav extends React.Component {
                 <div className="topnav-user">
                     <Popover placement="bottom" 
                         trigger="hover"
-                        content={<Button type="link" 
-                        onClick={this.onLogout}>退出</Button>}>
+                        content={
+                            <Button type="link" 
+                                onClick={this.onLogout}>退出</Button>
+                            }>
                         <div>
                             <Icon type="user" /> 
-                            {'dddddd'}
+                            {this.props.logined ? this.props.userInfo.username : '登录'}
                         </div>
                     </Popover>
                 </div>
@@ -44,3 +46,7 @@ export default class TopNav extends React.Component {
         )
     }
 }
+
+export default connect(
+    state => state.loginUserChange
+)(TopNav);

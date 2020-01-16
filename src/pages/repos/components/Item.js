@@ -43,7 +43,7 @@ export default class Item extends React.Component {
         return (
             <li className="item">
                 <Card title={name}>
-                    <Popover content={this.state.popoverContent} title={name} mouseEnterDelay={.5} onVisibleChange={this.onMouseOver.bind(this, owner.login, name)}>
+                    <Popover content={this.state.popoverContent} title={name} mouseEnterDelay={.5} onVisibleChange={this.onMouseOver.bind(this, (owner || {}).login, name)}>
                         <p className="description" title={description}>
                             <a href={html_url} target="_blank" rel="noopener noreferrer">{cutStr(description)}</a>
                         </p>

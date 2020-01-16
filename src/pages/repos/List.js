@@ -5,7 +5,6 @@ import { Empty } from 'antd';
 import api from '@api';
 import '@style/pages/common.scss';
 import { ls } from '@utils/localStorage';
-
 export default class List extends React.Component {
     constructor(props) {
         super(props);

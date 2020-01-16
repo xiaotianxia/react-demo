@@ -8,16 +8,16 @@ import {
 import './login.scss';
 import api from '@api';
 import { withRouter, Redirect } from 'react-router-dom';
-import { ls } from '@utils/localStorage';
+import { connect } from 'react-redux';
+import { onLogin } from '@/redux/actions';
 
-class RegistrationForm extends React.Component {
+class LoginForm extends React.Component {
     state = {
         loading: false
     }
 
     handleSubmit = e => {
         e.preventDefault();
-        ls.remove('my_github_app_username');
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 this.setState({ loading: true} );
@@ -30,15 +30,14 @@ class RegistrationForm extends React.Component {
         const data = await api.getUser({ username });
         this.setState({ loading: false });
         if (data.id) {
-            ls.set('my_github_app_username', username);
+            this.props.dispatch(onLogin({ username: data.login }));
             this.props.history.goBack() || this.props.history.push('repos');
         }
     }
 
     render() {
         const { getFieldDecorator } = this.props.form;
-        const user = ls.get('my_github_app_username');
-        if (user) {
+        if (this.props.logined) {
             return (<Redirect to="repos" />);
         } else {
             return <div className="login">
@@ -64,6 +63,9 @@ class RegistrationForm extends React.Component {
     }
 }
 
-const WrappedRegistrationForm = Form.create({ name: 'register' })(RegistrationForm);
+const WrappedRegistrationForm = Form.create({ name: 'login' })(LoginForm);
+const Login =  withRouter(WrappedRegistrationForm);
 
-export default withRouter(WrappedRegistrationForm);
+export default connect(
+    state => state.loginUserChange
+)(Login);

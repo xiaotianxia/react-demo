@@ -2,9 +2,14 @@ import { parseTpl, serializeJson } from '@/utils/util';
 import {
     message
 } from 'antd';
+import { ls } from '@utils/localStorage';
 const HOST = 'https://api.github.com';
 
 function request(path, param) {
+    const username = ls.get('my_github_app_username');
+    if (!username) {
+        window.location.href = '/#/login';
+    }
     return new Promise((resolve, reject) => {
         let fullUrl = parseTpl(HOST + path, param);
         fullUrl = fullUrl + '?' + serializeJson({
